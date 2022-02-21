@@ -11,18 +11,24 @@ struct Stack {
 int empty(struct Stack *ptr){
     if (ptr->top == -1)
     {
+        printf("The stack is empty\n");
         return 1;
     }
     else{
+        printf("The stack is not empty\n");
+
         return 0;
     }
 }
 int full(struct Stack *ptr){
     if (ptr->top == ptr->size-1 )
     {
+        printf("The stack is full\n");
+
         return 1;
     }
     else{
+        printf("The stack is not full\n");
         return 0;
     }
 }
@@ -49,20 +55,8 @@ int main()
     s->arr[4] = 5;
     s->top++;
    
-    if (empty(s))
-    {
-        printf("The stack is empty\n");
-    }
-    else{
-        printf("The stack is not empty\n");
-    }
-
-    if (full(s))
-    {
-        printf("The stack is full\n");
-    }
-    else{
-        printf("The stack is not full\n");
-    }
+    (empty(s));
+    (full(s));
+    
     return 0;
 }

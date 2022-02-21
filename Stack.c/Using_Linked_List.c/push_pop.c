@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node
+struct Stack
 {
     int data;
-    struct Node *next;
+    struct Stack *next;
 };
-void LinkedList(struct Node *ptr)
+void LinkedList(struct Stack *ptr)
 {
     while (ptr != NULL)
     {
@@ -15,7 +15,7 @@ void LinkedList(struct Node *ptr)
         ptr = ptr->next;
     }
 }
-int empty(struct Node *top)
+int empty(struct Stack *top)
 {
     if (top == NULL)
     {
@@ -26,9 +26,9 @@ int empty(struct Node *top)
         return 0;
     }
 }
-int full(struct Node *top)
+int full(struct Stack *top)
 {
-    struct Node *n = (struct Node *)malloc(sizeof(struct Node));
+    struct Stack *n = (struct Stack *)malloc(sizeof(struct Stack));
     if (n == NULL)
     {
         return 1;
@@ -38,7 +38,7 @@ int full(struct Node *top)
         return 0;
     }
 }
-struct Node *Push(struct Node *top, int x)
+struct Stack *Push(struct Stack *top, int x)
 {
     if (full(top))
     {
@@ -46,14 +46,14 @@ struct Node *Push(struct Node *top, int x)
     }
     else
     {
-        struct Node *n = (struct Node *)malloc(sizeof(struct Node));
+        struct Stack *n = (struct Stack *)malloc(sizeof(struct Stack));
         n->data = x;
         n->next = top;
         top = n;
         return top;
     }
 }
-struct Node *Pop(struct Node *top)
+struct Stack *Pop(struct Stack *top)
 {
     if (empty(top))
     {
@@ -61,7 +61,7 @@ struct Node *Pop(struct Node *top)
     }
     else
     {
-        struct Node *n = top;
+        struct Stack *n = top;
         top = top->next;
         int x = n->data;
         free(n);
@@ -70,7 +70,7 @@ struct Node *Pop(struct Node *top)
 }
 int main()
 {
-    struct Node *top = NULL;
+    struct Stack *top = NULL;
     printf("After pushing elements\n");
     top = Push(top, 12);
     top = Push(top, 162);

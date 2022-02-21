@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node
+struct Stack
 {
     int data;
-    struct Node *next;
+    struct Stack *next;
 };
-void LinkedList(struct Node *ptr)
+void LinkedList(struct Stack *ptr)
 {
     while (ptr != NULL)
     {
@@ -15,7 +15,7 @@ void LinkedList(struct Node *ptr)
         ptr = ptr->next;
     }
 }
-int empty(struct Node *top)
+int empty(struct Stack *top)
 {
     if (top == NULL)
     {
@@ -28,9 +28,9 @@ int empty(struct Node *top)
         return 0;
     }
 }
-int full(struct Node *top)
+int full(struct Stack *top)
 {
-    struct Node *n = (struct Node *)malloc(sizeof(struct Node));
+    struct Stack *n = (struct Stack *)malloc(sizeof(struct Stack));
     if (n == NULL)
     {
         printf("Stack is full\n");
@@ -45,7 +45,7 @@ int full(struct Node *top)
 
 int main()
 {
-    struct Node *top = NULL;
+    struct Stack *top = NULL;
     
     LinkedList(top);
     empty(top);

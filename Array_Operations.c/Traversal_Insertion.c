@@ -19,11 +19,11 @@ int insertion(int arr[], int size, int element, int index, int capacity)
     }
     else
     {
-        for (int i = size - 1; i >= index; i--)
+        for (int i = size - 1; i >= index; i--) // 4 change size
         {
-            arr[i + 1] = arr[i];
+            arr[i + 1] = arr[i]; // 3 change value 
         }
-        arr[index] = element;
+        arr[index] = element;  // 5 
     }
     return 1;
 }
@@ -40,3 +40,6 @@ int main()
     traversal(arr, size);
     return 0;
 }
+
+
+

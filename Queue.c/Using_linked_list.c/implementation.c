@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
- struct Node *f = NULL;
+struct Node *f = NULL;
 struct Node *r = NULL;
 
 struct Node
@@ -10,45 +10,48 @@ struct Node
     struct Node *next;
 };
 
-void traversal(struct Node *ptr){
+void traversal(struct Node *ptr)
+{
     printf("Printing the elements of linked list:\n");
-    while (ptr!=NULL)
+    while (ptr != NULL)
     {
         printf("Element = %d\n", ptr->data);
         ptr = ptr->next;
     }
-    
 }
 void enqueue(int val)
 {
     struct Node *n = (struct Node *)malloc(sizeof(struct Node));
-    if(n== NULL){
+    if (n == NULL)
+    {
         printf("Queue is full\n");
     }
-    else{
+    else
+    {
         n->data = val;
         n->next = NULL;
-        if (f==NULL)
+        if (f == NULL)
         {
-            f=r=n;
+            f = r = n;
         }
-        else{
+        else
+        {
             r->next = n;
-            r=n;
+            r = n;
         }
-        
     }
 }
 int dequeue()
 {
     int val = -1;
     struct Node *ptr = f;
-    if (f==NULL)
+    if (f == NULL)
     {
         printf("Queue is empty\n");
         return val;
     }
-    else{
+    else
+    {
         f = f->next;
         val = ptr->data;
         free(ptr);
@@ -57,7 +60,7 @@ int dequeue()
 }
 int main()
 {
-   
+
     enqueue(1);
     enqueue(2);
     enqueue(3);

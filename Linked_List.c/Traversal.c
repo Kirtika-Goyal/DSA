@@ -5,7 +5,7 @@ struct Node
 {
     int data;
     struct Node *next;
-};
+}N;
 void LinkedList(struct Node *ptr)
 {
     while (ptr != NULL)

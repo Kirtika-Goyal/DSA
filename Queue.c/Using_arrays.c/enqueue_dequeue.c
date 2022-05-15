@@ -31,28 +31,32 @@ int full(struct queue *q)
         return 0;
     }
 }
-void enqueue(struct queue *q , int val){
+void enqueue(struct queue *q, int val)
+{
     if (full(q))
     {
         printf("Queue overflow\n");
     }
-    else{
-        q->r = q->r+1;
-        q->arr[q->r]=val;
-        printf("Enqueuing element %d in queue\n",val);
+    else
+    {
+        q->r = q->r + 1;
+        q->arr[q->r] = val;
+        printf("Enqueuing element %d in queue\n", val);
     }
 }
-int dequeue(struct queue *q ){
+int dequeue(struct queue *q)
+{
     int a = -1;
     if (empty(q))
     {
         printf("Queue underflow\n");
         return 0;
     }
-    else{
+    else
+    {
         q->f++;
         a = q->arr[q->f];
-        printf("Dequeuing element %d from queue\n",q->arr[q->f]);
+        printf("Dequeuing element %d from queue\n", q->arr[q->f]);
         return a;
     }
 }
@@ -65,13 +69,13 @@ int main()
     q->arr = (int *)malloc(q->size * sizeof(int));
 
     printf("\n\n");
-    enqueue(q,12);
-    enqueue(q,72);
-    enqueue(q,83);
+    enqueue(q, 12);
+    enqueue(q, 72);
+    enqueue(q, 83);
     dequeue(q);
     dequeue(q);
     dequeue(q);
-    enqueue(q,83);
+    enqueue(q, 83);
     printf("\n\n");
     return 0;
 }

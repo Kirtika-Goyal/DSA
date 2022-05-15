@@ -8,6 +8,7 @@ struct queue
     int r;
     int *arr;
 };
+
 int empty(struct queue *q)
 {
     if (q->f == q->r)

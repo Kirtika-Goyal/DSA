@@ -34,7 +34,6 @@ int dequeue(struct circularqueue *q)
         q->f = (q->f + 1) % q->size;
         val = q->arr[q->f];
         printf("Dequeuing element %d in queue\n", val);
-
     }
     return val;
 }
@@ -49,7 +48,6 @@ int main()
     enqueue(q, 2);
     enqueue(q, 3);
     enqueue(q, 4);
-    
     dequeue(q);
     enqueue(q, 5);
 
